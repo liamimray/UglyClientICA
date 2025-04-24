@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UglyClientICA.Console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+807dd3a3200501c2dc39e63716eeca82fb36b7e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("UglyClientICA.Console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UglyClientICA.Console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
