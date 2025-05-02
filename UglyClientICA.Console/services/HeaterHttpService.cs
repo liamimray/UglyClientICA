@@ -1,8 +1,8 @@
 public class HeaterHttpService : IHeater
 {
-    private readonly HttpClient _client;
+    private readonly IHttpClient _client;
     public int Id { get; }
-    public HeaterHttpService(HttpClient client, int id) { _client = client; Id = id; }
+    public HeaterHttpService(IHttpClient client, int id) { _client = client; Id = id; }
 
     public async Task SetLevelAsync(int level)
     {

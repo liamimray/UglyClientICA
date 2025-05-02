@@ -14,7 +14,9 @@ static async Task Main(string[] args)
         // Configurable device counts
         int fanCount = 3, heaterCount = 3, sensorCount = 3;
 
-        var factory = new HttpDeviceFactory(client);
+        var httpClientAdapter = new SystemHttpClient(client);
+        var factory = new HttpDeviceFactory(httpClientAdapter);
+
         var controller = new DeviceController(factory, fanCount, heaterCount, sensorCount);
 
         while (true)

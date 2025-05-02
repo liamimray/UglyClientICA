@@ -1,8 +1,8 @@
 public class SensorHttpService : ISensor
 {
-    private readonly HttpClient _client;
+    private readonly IHttpClient _client;
     public int Id { get; }
-    public SensorHttpService(HttpClient client, int id) { _client = client; Id = id; }
+    public SensorHttpService(IHttpClient client, int id) { _client = client; Id = id; }
 
     public async Task<double> GetTemperatureAsync()
     {

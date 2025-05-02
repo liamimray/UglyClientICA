@@ -4,9 +4,10 @@ using System.Text.Json;
 
 public class FanHttpService : IFan
 {
-    private readonly HttpClient _client;
+    private readonly IHttpClient _client;
     public int Id { get; }
-    public FanHttpService(HttpClient client, int id) { _client = client; Id = id; }
+    // Had to refactor FanHttpService to depend on IHttpClient interface so that I can use Moq in test case.
+    public FanHttpService(IHttpClient client, int id) { _client = client; Id = id; }
 
     public async Task SetStateAsync(bool on)
     {
