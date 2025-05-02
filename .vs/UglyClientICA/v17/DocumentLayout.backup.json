@@ -1,0 +1,193 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|solutionrelative:uglyclientica.console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.console\\factory\\httpdevicefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|solutionrelative:uglyclientica.console\\factory\\httpdevicefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.console\\services\\heaterhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|solutionrelative:uglyclientica.console\\services\\heaterhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.console\\services\\sensorhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|solutionrelative:uglyclientica.console\\services\\sensorhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.console\\interfaces\\systemhttpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|solutionrelative:uglyclientica.console\\interfaces\\systemhttpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.console\\services\\fanhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|solutionrelative:uglyclientica.console\\services\\fanhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58C557DE-F709-417C-81E7-D1DCCFFFF23D}|UglyClientICA.Test\\UglyClientICA.Test.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.test\\fanhttpservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58C557DE-F709-417C-81E7-D1DCCFFFF23D}|UglyClientICA.Test\\UglyClientICA.Test.csproj|solutionrelative:uglyclientica.test\\fanhttpservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.console\\interfaces\\ihttpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10151379-B179-43B8-B6BF-88D273004289}|UglyClientICA.Console\\UglyClientICA.Console.csproj|solutionrelative:uglyclientica.console\\interfaces\\ihttpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58C557DE-F709-417C-81E7-D1DCCFFFF23D}|UglyClientICA.Test\\UglyClientICA.Test.csproj|c:\\users\\liam\\desktop\\se-ica\\uglyclientica\\uglyclientica.test\\devicecontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58C557DE-F709-417C-81E7-D1DCCFFFF23D}|UglyClientICA.Test\\UglyClientICA.Test.csproj|solutionrelative:uglyclientica.test\\devicecontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SensorHttpService.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\services\\SensorHttpService.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Console\\services\\SensorHttpService.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\services\\SensorHttpService.cs",
+              "RelativeToolTip": "UglyClientICA.Console\\services\\SensorHttpService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:05:29.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HeaterHttpService.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\services\\HeaterHttpService.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Console\\services\\HeaterHttpService.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\services\\HeaterHttpService.cs",
+              "RelativeToolTip": "UglyClientICA.Console\\services\\HeaterHttpService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:05:04.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HttpDeviceFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\factory\\HttpDeviceFactory.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Console\\factory\\HttpDeviceFactory.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\factory\\HttpDeviceFactory.cs",
+              "RelativeToolTip": "UglyClientICA.Console\\factory\\HttpDeviceFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:04:08.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\Program.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Console\\Program.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\Program.cs",
+              "RelativeToolTip": "UglyClientICA.Console\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwB4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T13:01:12.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FanHttpService.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\services\\FanHttpService.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Console\\services\\FanHttpService.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\services\\FanHttpService.cs",
+              "RelativeToolTip": "UglyClientICA.Console\\services\\FanHttpService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T12:57:28.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SystemHttpClient.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\interfaces\\SystemHttpClient.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Console\\interfaces\\SystemHttpClient.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\interfaces\\SystemHttpClient.cs",
+              "RelativeToolTip": "UglyClientICA.Console\\interfaces\\SystemHttpClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T12:57:07.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IHttpClient.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\interfaces\\IHttpClient.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Console\\interfaces\\IHttpClient.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Console\\interfaces\\IHttpClient.cs",
+              "RelativeToolTip": "UglyClientICA.Console\\interfaces\\IHttpClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T12:56:16.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FanHttpServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Test\\FanHttpServiceTests.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Test\\FanHttpServiceTests.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Test\\FanHttpServiceTests.cs",
+              "RelativeToolTip": "UglyClientICA.Test\\FanHttpServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T12:53:30.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DeviceControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Test\\DeviceControllerTests.cs",
+              "RelativeDocumentMoniker": "UglyClientICA.Test\\DeviceControllerTests.cs",
+              "ToolTip": "C:\\Users\\Liam\\Desktop\\se-ica\\UglyClientICA\\UglyClientICA.Test\\DeviceControllerTests.cs",
+              "RelativeToolTip": "UglyClientICA.Test\\DeviceControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T12:52:01.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
