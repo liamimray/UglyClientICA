@@ -1,0 +1,15 @@
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\bin\Debug\net8.0\UglyClientICA.Console.exe
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\bin\Debug\net8.0\UglyClientICA.Console.deps.json
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\bin\Debug\net8.0\UglyClientICA.Console.runtimeconfig.json
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\bin\Debug\net8.0\UglyClientICA.Console.dll
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\bin\Debug\net8.0\UglyClientICA.Console.pdb
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\UglyClientICA.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\UglyClientICA.Console.AssemblyInfoInputs.cache
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\UglyClientICA.Console.AssemblyInfo.cs
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\UglyClientICA.Console.csproj.CoreCompileInputs.cache
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\UglyClientICA.Console.sourcelink.json
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\UglyClientICA.Console.dll
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\refint\UglyClientICA.Console.dll
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\UglyClientICA.Console.pdb
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\UglyClientICA.Console.genruntimeconfig.cache
+C:\Users\Liam\Desktop\se-ica\UglyClientICA\UglyClientICA.Console\obj\Debug\net8.0\ref\UglyClientICA.Console.dll

@@ -5,15 +5,17 @@ using System.Threading.Tasks;
 
 class Program
 {
-    static async Task Main(string[] args)
+static async Task Main(string[] args)
     {
-        // https://envrosym.azurewebsites.net/
         var client = new HttpClient { BaseAddress = new Uri("http://127.0.0.1:5077/") };
-       // var client = new HttpClient { BaseAddress = new Uri("https://envrosym.azurewebsites.net/") };
-        const string apiKey = "API_KEY_CLIENT_3"; // Replace with your actual API key
-
-        // Add the API key to the default request headers
+        const string apiKey = "API_KEY_CLIENT_3";
         client.DefaultRequestHeaders.Add("X-Api-Key", apiKey);
+
+        // Configurable device counts
+        int fanCount = 3, heaterCount = 3, sensorCount = 3;
+
+        var factory = new HttpDeviceFactory(client);
+        var controller = new DeviceController(factory, fanCount, heaterCount, sensorCount);
 
         while (true)
         {
@@ -22,272 +24,75 @@ class Program
             Console.WriteLine("2. Control Heater");
             Console.WriteLine("3. Read Temperature");
             Console.WriteLine("4. Display State of All Devices");
-            Console.WriteLine("5. Control Simulation");
-            Console.WriteLine("6. Reset Simulation");
+            Console.WriteLine("X. Exit");
             Console.Write("Select an option: ");
-
             var input = Console.ReadLine();
-            switch (input)
-            {
-                case "1":
-                
-                    Console.Write("Enter Fan Number: ");
-                    if (int.TryParse(Console.ReadLine(), out int fanId))
-                    {
-                        Console.Write("Turn Fan On or Off? (on/off): ");
-                        var stateInput = Console.ReadLine();
-                        bool isOn = stateInput?.ToLower() == "on";
+            Console.WriteLine();
 
-                        try
+            try {
+                switch (input)
+                {
+                    case "1":
+                        Console.Write("Enter Fan Number: ");
+                        if (int.TryParse(Console.ReadLine(), out int fanId))
                         {
-                            await SetFanState(client, fanId, isOn);
+                            Console.Write("Turn Fan On or Off? (on/off): ");
+                            var stateInput = Console.ReadLine();
+                            bool isOn = stateInput?.ToLower() == "on";
+                            await controller.SetFanState(fanId, isOn);
                             Console.WriteLine($"Fan {fanId} has been turned {(isOn ? "On" : "Off")}.");
                         }
-                        catch (Exception ex)
+                        break;
+
+                    case "2":
+                        Console.Write("Enter Heater Number: ");
+                        if (int.TryParse(Console.ReadLine(), out int heaterId))
                         {
-                            Console.WriteLine($"Error: {ex.Message}");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid Fan Number.");
-                    }
-                    break;
-                case "2":
-                    
-                    Console.Write("Enter Heater Number: ");
-                    if (int.TryParse(Console.ReadLine(), out int heaterId))
-                    {
-                        Console.Write("Set Heater Level (0-5): ");
-                        if (int.TryParse(Console.ReadLine(), out int level) && level >= 0 && level <= 5)
-                        {
-                            try
+                            Console.Write("Set Heater Level (0-5): ");
+                            if (int.TryParse(Console.ReadLine(), out int level) && level >= 0 && level <= 5)
                             {
-                                await SetHeaterLevel(client, heaterId, level);
+                                await controller.SetHeaterLevel(heaterId, level);
                                 Console.WriteLine($"Heater {heaterId} level set to {level}.");
                             }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine($"Error: {ex.Message}");
-                            }
+                        }
+                        break;
+
+                                        case "3":
+                        Console.Write("Enter Sensor Number: ");
+                        if (int.TryParse(Console.ReadLine(), out int sensorId))
+                        {
+                            double temp = await controller.GetSensorTemperature(sensorId);
+                            Console.WriteLine($"Sensor {sensorId} Temperature: {temp:F1}°C");
                         }
                         else
                         {
-                            Console.WriteLine("Invalid Heater Level. Please enter a value between 0 and 5.");
+                            Console.WriteLine("Invalid Sensor Number.");
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid Heater Number.");
-                    }
-                    break;
-                case "3":
-                    
-                    Console.Write("Enter Sensor Number: ");
-                    if (int.TryParse(Console.ReadLine(), out int sensorId))
-                    {
-                        try
-                        {
-                            double temperature = await GetSensorTemperature(client, sensorId);
-                            Console.WriteLine($"Sensor {sensorId} Temperature: {temperature:F1}°C");
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Error: {ex.Message}");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid Sensor Number.");
-                    }
-                    break;
-                case "4":
-                    Console.WriteLine("Fetching the state of all devices...");
+                        break;
 
-                    try
-                    {
-                        Console.WriteLine("Fetching fan states individually...");
-                        for (int i = 1; i <= 3; i++) // Assuming there are 3 fans for this example
-                        {
-                            var fanResponse = await client.GetAsync($"api/fans/{i}/state");
-                            if (fanResponse.IsSuccessStatusCode)
-                            {
-                                var fanJson = await fanResponse.Content.ReadAsStringAsync();
-                                var fan = JsonSerializer.Deserialize<FanDTO>(fanJson, new JsonSerializerOptions
-                                {
-                                    PropertyNameCaseInsensitive = true
-                                });
-                                Console.WriteLine($"  Fan {fan.Id}: {(fan.IsOn ? "On" : "Off")}");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"  Fan {i}: Failed to fetch state.");
-                            }
-                        }
-                        Console.WriteLine("Fetching heater levels individually...");
-                        for (int i = 1; i <= 3; i++) // Assuming there are 3 heaters for this example
-                        {
-                            var heaterResponse = await client.GetAsync($"api/heat/{i}/level");
-                            if (heaterResponse.IsSuccessStatusCode)
-                            {
-                                var levelString = await heaterResponse.Content.ReadAsStringAsync();
-                                if (int.TryParse(levelString, out int level))
-                                {
-                                    Console.WriteLine($"  Heater {i}: Level {level}");
-                                }
-                                else
-                                {
-                                    Console.WriteLine($"  Heater {i}: Failed to parse level.");
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine($"  Heater {i}: Failed to fetch level.");
-                            }
-                        }
-                        Console.WriteLine("Fetching sensor temperatures individually...");
-                        try
-                        {
-                            var sensor1Temp = await GetSensor1Temperature(client);
-                            Console.WriteLine($"  Sensor 1: Temperature {sensor1Temp} (Deg)");
+                    case "4":
+                        Console.WriteLine("Fetching state of all devices...");
+                        await controller.ShowDeviceStates();
+                        break;
 
-                            var sensor2Temp = await GetSensor2Temperature(client);
-                            Console.WriteLine($"  Sensor 2: Temperature {sensor2Temp} (Deg)");
+                    case "X":
+                    case "x":
+                        Console.WriteLine("Exiting program...");
+                        return;
 
-                            var sensor3Temp = await GetSensor3Temperature(client);
-                            Console.WriteLine($"  Sensor 3: Temperature {sensor3Temp} (Deg)");
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Error fetching sensor data: {ex.Message}");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error fetching device states: {ex.Message}");
-                    }
-                    break;
-                case "5":
-                    //await RunTemperatureControlLoop(client);
-                    Console.WriteLine("Starting temperature control algorithm...");
-                    Console.Write("Provide a final Temp Value: ");
-                    double currentTemperature = await GetAverageTemperature(client);
-                    while (true)
-                    {
-                        // Phase 1: Gradually increase to 20°C over 30 seconds
-                        currentTemperature = await AdjustTemperature(client, currentTemperature, 20.0, 30);
-
-                        // Phase 2: Rapidly cool to 16°C
-                        currentTemperature = await AdjustTemperature(client, currentTemperature, 16.0, 10);
-
-                        // Phase 3: Hold at 16°C for 10 seconds
-                        currentTemperature = await HoldTemperature(client, currentTemperature, 16.0, 10);
-
-                        // Phase 4: Gradually return to 18°C and maintain
-                        currentTemperature = await AdjustTemperature(client, currentTemperature, 18.0, 20);
-                        currentTemperature = await HoldTemperature(client, currentTemperature, 18.0, int.MaxValue); // Maintain until exit
-                    }
-                case "6":
-                    // await Reset(client);
-                    Console.WriteLine("Resetting client state...");
-
-                    try
-                    {
-                        // Send a POST request to the reset endpoint
-                        var response = await client.PostAsync("api/Envo/reset", null);
-
-                        if (response.IsSuccessStatusCode)
-                        {
-                            Console.WriteLine("Client state has been successfully reset.");
-                            Console.WriteLine("Fetching the state of all devices...");
-
-                            try
-                            {
-                                // Get individual fan states
-                                Console.WriteLine("Fetching fan states individually...");
-                                for (int i = 1; i <= 3; i++) // Assuming there are 3 fans for this example
-                                {
-                                    var fanResponse = await client.GetAsync($"api/fans/{i}/state");
-                                    if (fanResponse.IsSuccessStatusCode)
-                                    {
-                                        var fanJson = await fanResponse.Content.ReadAsStringAsync();
-                                        var fan = JsonSerializer.Deserialize<FanDTO>(fanJson, new JsonSerializerOptions
-                                        {
-                                            PropertyNameCaseInsensitive = true
-                                        });
-                                        Console.WriteLine($"  Fan {fan.Id}: {(fan.IsOn ? "On" : "Off")}");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine($"  Fan {i}: Failed to fetch state.");
-                                    }
-                                }
-
-                                // Get individual heater levels
-                                Console.WriteLine("Fetching heater levels individually...");
-                                for (int i = 1; i <= 3; i++) // Assuming there are 3 heaters for this example
-                                {
-                                    var heaterResponse = await client.GetAsync($"api/heat/{i}/level");
-                                    if (heaterResponse.IsSuccessStatusCode)
-                                    {
-                                        var levelString = await heaterResponse.Content.ReadAsStringAsync();
-                                        if (int.TryParse(levelString, out int level))
-                                        {
-                                            Console.WriteLine($"  Heater {i}: Level {level}");
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine($"  Heater {i}: Failed to parse level.");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine($"  Heater {i}: Failed to fetch level.");
-                                    }
-                                }
-
-                                // Get individual sensor temperatures
-                                Console.WriteLine("Fetching sensor temperatures individually...");
-                                try
-                                {
-                                    var sensor1Temp = await GetSensor1Temperature(client);
-                                    Console.WriteLine($"  Sensor 1: Temperature {sensor1Temp} (Deg)");
-
-                                    var sensor2Temp = await GetSensor2Temperature(client);
-                                    Console.WriteLine($"  Sensor 2: Temperature {sensor2Temp} (Deg)");
-
-                                    var sensor3Temp = await GetSensor3Temperature(client);
-                                    Console.WriteLine($"  Sensor 3: Temperature {sensor3Temp} (Deg)");
-                                }
-                                catch (Exception ex)
-                                {
-                                    Console.WriteLine($"Error fetching sensor data: {ex.Message}");
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine($"Error fetching device states: {ex.Message}");
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Failed to reset client state: {response.ReasonPhrase}");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error while resetting client state: {ex.Message}");
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Invalid option. Please try again.");
-                    break;
+                    default:
+                        Console.WriteLine("Invalid option. Please try again.");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
             }
 
-            Console.WriteLine(); // Add a blank line for better readability
+            Console.WriteLine(); // For improved readability between operations
         }
     }
-
     private static async Task Reset(HttpClient client)
     {
         Console.WriteLine("Resetting client state...");
